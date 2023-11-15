@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://db.onlinewebfonts.com/c/97c4b25dc74e0ab045154e75a8fdd69d?family=Game+of+Thrones');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto',sans-serif;
+    scroll-behavior: smooth;
+}
+
+a{
+    color: inherit;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #FFF;
+    background-color: #2D2D2D;
+}
+
+header{
+    width: 100%;
+    height: 50px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+}
+
+header p{
+    font-family: "Game of Thrones";
+}
+
+header ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul li{
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 1rem;
+    color: #838383;
+}
+
+header ul li:hover,
+header ul li.active{
+    color: #FFF;
+}
+
+.banner{
+    width: 100%;
+    height: 90vh;
+    background: url('https://is1-ssl.mzstatic.com/image/thumb/fw6HonlWMHmyLiY3brBH5A/1679x945sr.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.banner img{
+    width: 300px;
+    height: auto;
+    padding: 2rem;
+}
+
+.banner::after{
+    content: '';
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to top, #141414, transparent) ;
+}
+
+.modal{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
+.info-modal{
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+    padding-bottom: 1rem;
+    background-color: #363636;
+}
+
+.info-modal img{
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+}
+
+.btn-close{
+    font-size: 30px;
+    padding-left: 1rem;
+}
+
+.info-modal h2,
+.info-modal h6{
+    margin-left: 2rem;
+}
+
+.sinopse-modal{
+    font-weight: normal;
+    font-size: 17px;
+    width: 90%;
+}
+
+section{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 1.5rem 30px;
+    position: relative;
+} 
+
+section p{
+    font-size: 12px;
+}
+
+section p:last-child{
+    font-size: 15px;
+}
+
+section p:last-child span{
+    color: #8B8B8B;
+}
+
+section div{
+    width: 50%;
+}
+
+.sinopse{
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+section div button{
+    border: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: #0A84FF;
+    background-color: #141414;
+}
+
+section div div{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+section div div img{
+    width: 19px;
+}
+
+.hd{
+    padding: 1px;
+    border-radius: 2px;
+    font-weight: bold;
+    background-color: #95959b;
+    color: #000;
+}
+
+.quality{
+    border-radius: 2px;
+    padding: 1px;
+    font-weight: bold;
+    color: #95959b;
+    border: 1px solid #95959b;
+}
+
+.modal-related{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center ;
+    position: absolute;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5))
+}
+
+.modal-related-content{
+    width: 400px;
+    height: auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 8px;
+    padding: 1rem 0;
+    background-color: #363636;
+}
+
+.related-image-modal{
+    width: 100%;
+}
+
+.related-p-modal{
+    width: 90%;
+    padding: 0.5rem 0;
+}
+
+.related{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.related::after{
+    content: '';
+    width: 95%;
+    height: 0.5px;
+    background-color: #4a4a4a;
+}
+
+.related h4{
+    width: 95%;
+    text-align: left;
+}
+
+.carousel-container{
+    width: 95%;
+    overflow: hidden;
+}
+
+.content-related{
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    gap: 0 1rem;
+}
+ 
+.related-image{
+    width: 275px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 2px solid #2D2D2D;
+}
+
+.related-image:hover{
+    opacity: 80%;
+    border: 2px solid #0A84FF;
+}
+ 
+.cast{
+    width: 95%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.content-cast{
+    width: 100%;
+}
+
+.cast-ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cast-li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    color: #FFF;
+    padding: 1rem;
+}
+
+.cast-li span:last-child{
+    color: #8B8B8B;
+}
+
+.cast-about{
+    width: 90%;
+    height: auto;
+    display: none;
+    border-top: 1px solid #494949;
+}
+
+.cast-about-p{
+    font-size: 16px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.actor-info{
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 1rem 0;
+}
+
+.actor-image{
+    width: 128px;
+    height: auto;
+    border-radius: 50%;
+    transition: 0.2s;
+    border: 2px solid #2D2D2D;
+}
+
+.actor-image:hover{
+    border: 2px solid #0A84FF;
+}
+
+.actor-desc{
+   width: 80%;
+   padding-top: 1rem;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    background-color: #1F1F1F;
+}
+
+.about::after {
+    content: '';
+    width: 95%;
+    height: 0.5px;
+    background-color: #4a4a4a;
+}
+
+.info{
+    width: 375px;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #363636;
+}
+
+.info p{
+    color:#8B8B8B;
+}
+
+.info button{
+    background-color: #363636;
+}
+
+.more-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #1F1F1F;
+}
+
+.more-info ul{
+    max-width: 33%;
+    text-align: left;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.more-info ul li{
+    font-size: 12px;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+.more-info ul li span{
+    color: #8B8B8B;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding: 2rem;
+    background-color: #2D2D2D;
+}
+
+footer p{
+    font-size: 12px;
+    display: flex;
+    align-items: flex-end;
+    color: #8B8B8B;
+}
+
+footer a img{
+    width: 20px;
+    margin: 0 0.5rem;
+}
+
+.toTopBtn{
+    border: none;
+    position: absolute;
+    bottom: 100px;
+    right:50px;
+    animation: go-top 2s infinite alternate;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.toTopBtn img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+@keyframes go-top {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(80px);
+    }
+}
+
+
+@media(max-width:1024px){
+    .banner{
+        height: 400px;
+    }
+}
+
+
+@media(max-width:688px){
+    header p{
+        display: none;
+    }
+
+    header ul{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+
+    .banner {
+        position: relative;
+        background: url('https://4.bp.blogspot.com/-_AWOHYbG3ZQ/XOPN77M-JJI/AAAAAAAADCc/HOnXC92F1N4Hncd71pdDXj8K_m_eBvmQQCKgBGAs/w1280-h800-c/game-of-thrones-iron-throne-uhdpaper.com-4K-75.jpg');
+        background-position: 50% 10%;
+    }
+    
+    .banner img{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media(max-width:428px){
+    header ul{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    header ul li{
+        font-size: 16px;
+        padding: 0.5rem;
+    }
+
+    .sec-section >span:nth-child(1){
+        display: none;
+    }
+
+    .info-modal{
+       width: 90%;
+       padding-top: 1rem;
+    }
+
+    .modal-related-content{
+        width: 90%;
+    }
+
+    .btn-close{
+        display: none;
+    }
+
+    .cast-about{
+        display: flex;
+        flex-direction: column;
+        display: none;
+    }
+
+    .info{
+        width: 90%;
+    }
+}
